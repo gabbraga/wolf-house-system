@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/gabbraga/wolf-house-system/issues"
   },
-  "homepage": "https://github.com/gabbraga/wolf-house-system#readme"
+  "homepage": "https://github.com/gabbraga/wolf-house-system#readme",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "angular-ui-router": "^1.0.24",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.7"
+  }
 }
