@@ -1,9 +1,8 @@
-var mongoose = require("mongoose"),
- Schema = mongoose.Schema,
- objectId = mongoose.Schema.ObjectId;
+const mongoose = require("mongoose");
 
-var userSchema = new Schema({
- _id: { type: objectId, auto: true },
+//define the schema; ie what will be the fields in the documents
+let userSchema = new mongoose.Schema({
+ _id: { type: mongoose.Schema.ObjectId, auto: true },
  name: { type: String, required: true },
  contactNo: { type: String, required: true },
  address: { type: String, required: true }
@@ -11,6 +10,7 @@ var userSchema = new Schema({
  versionKey: false
 });
 
-var user = mongoose.model('users', userSchema);
+//compile the user schema into a model; a model is a class with which we construct documents
+const userModel = mongoose.model('users', userSchema);
 
-module.exports = user;
+module.exports = userModel;
