@@ -14,22 +14,12 @@ router.get("/:id", function (req, res) {
 });
 
 // add a new wolf member
-router.push("/", function (req, res) {
-    var obj = req.body;
-    var model = new user(obj);
-    model.save(function (err) {
-        if (err) {
-            res.send("error");
-            return;
-        }
-        res.send("created");
-    });
-}).put("/:id", function (req, res) {
+router.post("/", function (req, res) {
     
 });
 
 //edit a wolf member, specified by ID
-router.post("/:id", function(req, res) {
+router.put("/:id", function(req, res) {
 
 });
 

@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const House = new mongoose.Schema({
     name: {type: String, required: true },
-    points: {type: Number, required: true}
+    points: {type: Number, required: true},
+    imgURL: {type: String, required: true}
 });
 
 //compile the schema into a model; a model is a class with which we construct documents
