@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 //define the schema; ie what will be the fields in the documents
 const Member = new mongoose.Schema({
     /* _id: { type: mongoose.Schema.ObjectId, auto: true }, */
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    house: { type: String, required: true } //change string to house later
+    name: { type: String, required: true },
+    house: { type: String, required: true },
+    memberType: {type: String, required: true} //change string to house later
 }, {
  versionKey: false
 });

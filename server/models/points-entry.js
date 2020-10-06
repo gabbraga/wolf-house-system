@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const PointsEntry = new mongoose.Schema({
     date: {type: Date, required: true},
-    member: {type: Member, required: true},
-    staffMember: {type: Member, required: true},
+    member: {type: String, required: true}, //change string to member later
+    staffMember: {type: String, required: true},//change string to member later
     reason: {type: String, required: true},
     comments: {type: String, required: true},
     points: {type: Number, required: true}

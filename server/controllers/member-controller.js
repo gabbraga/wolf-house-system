@@ -1,29 +1,29 @@
 'use strict'
 
 const router = require("express").Router();
-const House = require("../models/house");
+const member = require("../models/member");
 
-//get all houses 
+//get all wolf members
 router.get("/", function (req, res) {
-
+    res.send();
 });
 
-//get a house, specified by ID
+//get a wolf member, specified by ID
 router.get("/:id", function (req, res) {
- 
+
 });
 
-// add a new house
+// add a new wolf member
 router.post("/", function (req, res) {
     
 });
 
-//edit a house, specified by ID
+//edit a wolf member, specified by ID
 router.put("/:id", function(req, res) {
 
 });
 
-//delete a house, specified by ID
+//delete a wolf member, specified by ID
 router.delete("/:id", function (req, res) {
     
 });
