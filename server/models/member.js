@@ -5,7 +5,7 @@ const Member = new mongoose.Schema({
     /* _id: { type: mongoose.Schema.ObjectId, auto: true }, */
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    house: { type: House, required: true }
+    house: { type: String, required: true } //change string to house later
 }, {
  versionKey: false
 });
