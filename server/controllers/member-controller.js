@@ -5,7 +5,7 @@ const member = require("../models/member");
 
 //get all wolf members
 router.get("/", function (req, res) {
-    res.send();
+    res.end();
 });
 
 //get a wolf member, specified by ID
