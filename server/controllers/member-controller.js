@@ -18,8 +18,21 @@ router.get("/", function (req, res) {
         });
 });
 
-//get a wolf member, specified by ID
-router.get("/:id", function (req, res) {
+//get a wolf member by name
+router.get("/:name", function (req, res) {
+    Member.findOne({
+        name: req.params.name
+    })
+    .exec()
+    .then(member=>{
+        res.status(200).json(member);
+    })
+    .catch(err=> {
+        console.log(err);
+    })
+    .finally(()=>{
+        res.end();
+    });
     
 });
 
