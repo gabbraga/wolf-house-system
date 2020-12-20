@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
 //define the schema; ie what will be the fields in the documents
-const Member = new mongoose.Schema({
-    /* _id: { type: mongoose.Schema.ObjectId, auto: true }, */
+const memberSchema = new mongoose.Schema({
+    _id: { type: mongoose.Types.ObjectId, auto: true },
     name: { type: String, required: true },
     house: { type: String, required: true },
-    memberType: {type: String, required: true} //change string to house later
+    type: {type: String, required: true}
 }, {
  versionKey: false
 });
 
 //compile the schema into a model; a model is a class with which we construct documents
-const memberModel = mongoose.model('Member', Member);
+const memberModel = mongoose.model('Member', memberSchema);
 
 module.exports = memberModel;
