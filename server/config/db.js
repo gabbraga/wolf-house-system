@@ -1,6 +1,6 @@
-//connect to the database wolfpack_db
+//connect to the database 'wolfhouse'
 const mongoose = require('mongoose');
-const connection = mongoose.connect('mongodb://localhost:27017/wolfpack_db');
+const connection = mongoose.connect('mongodb://localhost:27017/wolfhouse_dev', {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
