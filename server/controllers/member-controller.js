@@ -55,13 +55,28 @@ router.post("/", function (req, res) {
     });
 });
 
-//edit a wolf member, specified by ID
-router.put("/:id", function(req, res) {
-
+//edit a wolf member, specified by name
+router.put("/:name", function(req, res) {
+    Member.findOneAndUpdate({
+        name: req.params.name
+    },
+    {
+        name: req.body.name,
+        house: req.body.house,
+        type: req.body.type
+    },
+    (err, member)=> {
+        console.log(member);
+    }
+    );
+    res.status(201).json({
+        //updatedMember: member
+    });
+    res.end();
 });
 
-//delete a wolf member, specified by ID
-router.delete("/:id", function (req, res) {
+//delete a wolf member, specified by name
+router.delete("/:name", function (req, res) {
     
 });
 
