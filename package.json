@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/gabbraga/wolf-house-system#readme",
   "dependencies": {
-    "angular": "^1.7.9",
+    "angular": "^1.8.3",
     "angular-ui-router": "^1.0.24",
     "bootstrap": "^4.4.1",
     "dotenv": "^16.0.2",
