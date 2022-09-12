@@ -5,9 +5,11 @@ const Member = require("../models/member");
 
 //get all wolf members
 router.get("/", function (req, res) {
-    Member.find()
+    console.dir(req);
+    Member.find({})
         .exec()
         .then(members=>{
+            console.dir(members);
             res.status(200).json(members);
         })
         .catch(err=> {

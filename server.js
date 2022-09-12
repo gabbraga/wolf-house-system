@@ -23,6 +23,14 @@ app.use(express.static(path.join(__dirname, 'app')));
 // setting static files location './node_modules' for libs like angular, bootstrap
 app.use(express.static('node_modules'));
 
+
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['http://localhost:4200']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 // configure our routes
 app.use('/', routes);
 app.use('/api', apiRoutes);
