@@ -4,6 +4,7 @@
   "description": "manage a points system similar to 'hogwarts houses' and track student point history",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "start-db": "./utils/mongo_script.sh"
   },
@@ -26,7 +27,9 @@
     "angular": "^1.7.9",
     "angular-ui-router": "^1.0.24",
     "bootstrap": "^4.4.1",
+    "dotenv": "^16.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.8.7"
+    "mongoose": "^5.8.7",
+    "nodemon": "^2.0.19"
   }
 }

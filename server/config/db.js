@@ -1,6 +1,6 @@
 //connect to the database 'wolfhouse'
 const mongoose = require('mongoose');
-const connection = mongoose.connect('mongodb://localhost:27017/wolfhouse_dev', {useNewUrlParser: true});
+const connection = mongoose.connect(process.env.DB_CONNECTION_STRING, {useNewUrlParser: true});
 // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
 // by default, you need to set it to false.
 mongoose.set('useFindAndModify', false);
