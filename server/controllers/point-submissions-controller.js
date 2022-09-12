@@ -33,4 +33,44 @@ router.get("/leaderBoardTotals", function (req, res) {
         });
 });
 
+//get all point submissions
+router.get("/", function (req, res) {
+  let filter = {};
+
+  if(req.query) {
+    if(req.query.grade) {
+      filter['grade'] = {
+        '$regex': req.query.grade,
+        '$options': "i"
+      }
+    }
+
+    if(req.query.staff) {
+      filter['staff'] = {
+        '$regex': req.query.staff,
+        '$options': "i"
+      }
+    }
+
+    if(req.query.house) {
+      filter['house'] = {
+        '$regex': req.query.house,
+        '$options': "i"
+      }
+    }
+  }
+
+  PointSubmission.find(filter)
+        .exec()
+        .then(totals=>{
+            res.status(200).json(totals);
+        })
+        .catch(err=> {
+            console.log(err);
+        })
+        .finally(()=>{
+            res.end();
+        });
+});
+
 module.exports = router;
