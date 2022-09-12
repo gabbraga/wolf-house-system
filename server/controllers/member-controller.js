@@ -5,7 +5,33 @@ const Member = require("../models/member");
 
 //get all wolf members
 router.get("/", function (req, res) {
-    Member.find({})
+    
+    let filter = {};
+
+    if(req.query) {
+      if(req.query.grade) {
+        filter['grade'] = {
+          '$regex': req.query.grade,
+          '$options': "i"
+        }
+      }
+  
+      if(req.query.teacher) {
+        filter['teacher'] = {
+          '$regex': req.query.teacher,
+          '$options': "i"
+        }
+      }
+  
+      if(req.query.house) {
+        filter['house'] = {
+          '$regex': req.query.house,
+          '$options': "i"
+        }
+      }
+    }
+
+    Member.find(filter)
         .exec()
         .then(members=>{
             res.status(200).json(members);
