@@ -15,6 +15,10 @@ router.get("/leaderBoardTotals", function (req, res) {
               }
             }
           }
+        }, {
+          '$sort': {
+            '_id': 1
+          }
         }
       ])
         .exec()
