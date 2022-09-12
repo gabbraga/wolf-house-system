@@ -1,6 +1,7 @@
 'use strict'
 
 const router = require("express").Router();
+const objectId = require("mongoose").Types.ObjectId;
 const PointSubmission = require("../models/point-submission");
 
 //get point totals by house
@@ -57,6 +58,10 @@ router.get("/", function (req, res) {
         '$regex': req.query.house,
         '$options': "i"
       }
+    }
+
+    if(req.query.studentId) {
+      filter['studentId'] = objectId(req.query.studentId)
     }
   }
 
