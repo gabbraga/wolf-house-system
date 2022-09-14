@@ -78,4 +78,35 @@ router.get("/", function (req, res) {
         });
 });
 
+router.post("/", function (req, res) {
+  if(req.body) {
+    const submission = new PointSubmission({
+      studentId: req.body.studentId,
+      date: req.body.date,
+      house: req.body.house,
+      paw: req.body.paw,
+      comments: req.body.comments,
+      staff: req.body.staff,
+      points: req.body.points
+    });
+    submission
+    .save()
+    .catch( err => {
+        console.log(err);
+    });
+    /* res.status(201).json({
+        message:"handling post",
+        createdSubmission: submission
+    }); */
+    res.status(201).send({
+      message:"handling post",
+      createdSubmission: submission
+    });
+  } else {
+    res.status(400).json({
+      message:"invalid request"
+    });
+  }
+})
+
 module.exports = router;

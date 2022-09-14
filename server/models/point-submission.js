@@ -8,7 +8,7 @@ const pointSubmissionSchema = new mongoose.Schema({
     date: { type: Date, required: true },
     house: { type: String, required: true },
     paw: { type: String, required: true },
-    comments: { type: String, required: true },
+    comments: { type: String, required: false },
     staff: { type: String, required: true },
     points: {type: Number, required: true}
 }, {
