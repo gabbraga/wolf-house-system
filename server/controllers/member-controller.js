@@ -10,10 +10,14 @@ router.get("/", function (req, res) {
 
     if(req.query) {
       if(req.query.grade) {
-        filter['grade'] = {
-          '$regex': req.query.grade,
-          '$options': "i"
-        }
+        filter['$or'] = [
+            { 'grade': {
+                    '$regex': req.query.grade,
+                    '$options': "i"
+                }
+            },
+            { 'grade': parseInt(req.query.grade) }
+        ] 
       }
   
       if(req.query.teacher) {
